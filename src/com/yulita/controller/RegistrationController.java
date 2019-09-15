@@ -1,5 +1,6 @@
 package com.yulita.controller;
 
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,7 +13,7 @@ public class RegistrationController {
 
 	private UserServiceImpl userService;
 
-    @RequestMapping(name="/registration")
+    @PostMapping(name="/registration")
     public User registerUser(@RequestParam(value="firstName") String firstName, @RequestParam(value="lastName") String lastName,
     		@RequestParam(value="phone") String phone, @RequestParam(value="dob") String dob, @RequestParam(value="email") String email,@RequestParam(value="gender") String gender) throws Exception {
         User user = null;
